@@ -1,15 +1,14 @@
 import React, { Fragment } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { addNumber } from '@redux/actions/app';
+import Routes from './Routes'
 
 function App() {
-    const dispatch = useDispatch();
-    const count = useSelector(state => state.app.count);
     return (
         <Fragment>
-            <h1>Hello, React</h1>
-            <button onClick={() => dispatch(addNumber())}>Click me {count}</button>
+            <Router>
+                <Routes />
+            </Router>
         </Fragment>
     )
 }
